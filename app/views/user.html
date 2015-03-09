@@ -1,0 +1,33 @@
+<header class="bar bar-nav">
+  <a class="icon icon-left-nav pull-left" ng-if="status !== 'selection'" ng-click="changeStatus('selection')"></a>
+  <h1 class="title">Movie app</h1>
+</header>
+<div class="user" ng-switch="status">
+  <div class="" ng-switch-when="selection">
+    <button class="btn btn-positive btn-block" ng-click="changeStatus('signin')">Sign in</button>
+    <button class="btn btn-positive btn-block" ng-click="changeStatus('login')">Login</button>
+
+  </div>
+  <div class="signin" ng-switch-when="signin">
+    <form name="joinUs" ng-submit="register.submit(joinUs)" novalidate>
+      <label for="name">Name</label>
+      <input type="text" placeholder="Full name" id="name" ng-model="user.name">
+      <label for="username">Username</label>
+      <input type="text" placeholder="Username" id="username" ng-model="user.username">
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" id="email" ng-model="user.mail">
+      <label for="password">Password</label>
+      <input type="password" placeholder="Username" id="password" ng-model="user.password">
+      <button class="btn btn-positive btn-block">Sign in</button>
+    </form>
+  </div>
+  <div class="login" ng-switch-when="login">
+    <form name="signIn" ng-submit="register.submit(signIn)" novalidate>
+      <label for="username">Username</label>
+      <input type="text" placeholder="username" id="name" ng-model="login.username">
+      <label for="password">Password</label>
+      <input type="password" placeholder="password" id="username" ng-model="login.password">
+      <button class="btn btn-positive btn-block">Login</button>
+    </form>
+  </div>
+</div>

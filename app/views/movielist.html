@@ -1,0 +1,13 @@
+<div class="col-md-12 movieList" ng-controller="MovielistCtrl">
+  <div class="col-md-12 search">
+  	Search: <input type="text" ng-model="query">
+  </div>
+  <div class="col-md-2 movieItem" ng-repeat="movie in moviesList | filter:query">
+      
+    <img ng-src="https://image.tmdb.org/t/p/w130/{{movie.poster_path}}" alt="movie.title" ng-click="imageClick(movie.id)">
+    
+    <a href="" ng-click="imageClick(movie.id)">
+      <h2>{{movie.title | limitTo : 12}}</h2>
+    </a>
+  </div>
+</div>
