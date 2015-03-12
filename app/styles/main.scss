@@ -1,4 +1,5 @@
 // bower:scss
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
 .user {
@@ -6,5 +7,25 @@
   padding: 10px;
 }
 
+.search-box {
+  background-color: rgba(247, 247, 247, .98);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  a {
+    float: left;
+    margin-top: 10px;
+  }
+  .search {
+    float: right;
+    margin: 0;
+    width: 90%;
+  }
+}
+
+.movie-list {
+  margin-top: 50px;
+}
 /* Space out content a bit */
 

@@ -1,13 +1,20 @@
-<div class="col-md-12 movieList" ng-controller="MovielistCtrl">
-  <div class="col-md-12 search">
-  	Search: <input type="text" ng-model="query">
-  </div>
-  <div class="col-md-2 movieItem" ng-repeat="movie in moviesList | filter:query">
-      
-    <img ng-src="https://image.tmdb.org/t/p/w130/{{movie.poster_path}}" alt="movie.title" ng-click="imageClick(movie.id)">
-    
-    <a href="" ng-click="imageClick(movie.id)">
-      <h2>{{movie.title | limitTo : 12}}</h2>
+<div class="content" ng-controller="MovielistCtrl">
+  <div class="search-box">
+  	<input type="text" ng-model="query" class="search" ng-if="canSearch">
+    <a class="tab-item" ng-click="showSearch()">
+      <span class="icon icon-search"></span>
     </a>
   </div>
+  <ul class="table-view movie-list">
+    <li class="table-view-cell media" ng-repeat="movie in moviesList | filter:query">
+      <a class="navigate-right">
+        <img class="media-object pull-left" ng-src="https://image.tmdb.org/t/p/w130/{{movie.poster_path}}" alt="movie.title" ng-click="imageClick(movie.id)">
+
+        <div class="media-body">
+          {{movie.title}}
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore. Lorem ipsum dolor sit amet.</p>
+        </div>
+      </a>
+    </li>
+  </ul>
 </div>

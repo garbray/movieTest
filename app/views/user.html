@@ -9,7 +9,7 @@
 
   </div>
   <div class="signin" ng-switch-when="signin">
-    <form name="joinUs" ng-submit="register.submit(joinUs)" novalidate>
+    <form name="joinUs" ng-submit="register.submit(joinUs, user)" novalidate>
       <label for="name">Name</label>
       <input type="text" placeholder="Full name" id="name" ng-model="user.name">
       <label for="username">Username</label>
@@ -22,12 +22,13 @@
     </form>
   </div>
   <div class="login" ng-switch-when="login">
-    <form name="signIn" ng-submit="register.submit(signIn)" novalidate>
+    <p class="badge-negative" ng-if="error == true"> {{errorText}}</p>
+    <form name="signIn" ng-submit="register.submit(signIn, userLogin)" novalidate>
       <label for="username">Username</label>
-      <input type="text" placeholder="username" id="name" ng-model="login.username">
+      <input type="text" placeholder="username" id="name" ng-model="userLogin.username">
       <label for="password">Password</label>
-      <input type="password" placeholder="password" id="username" ng-model="login.password">
+      <input type="password" placeholder="password" id="username" ng-model="userLogin.password">
       <button class="btn btn-positive btn-block">Login</button>
     </form>
   </div>
-</div>
+</dir>

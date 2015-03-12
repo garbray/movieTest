@@ -10,10 +10,15 @@
 angular.module('movieTestApp')
   .controller('MovielistCtrl', function ($scope, $location) {
     $scope.moviesList = movies.items;
+    $scope.canSearch = false;
 
     $scope.imageRoute = 'https://image.tmdb.org/t/p/w130';
     $scope.imageClick = function (id) {
-    	$location.path('/movieDetail/' + id);
+      $location.path('/movieDetail/' + id);
+    };
+
+    $scope.showSearch = function () {
+      $scope.canSearch = !$scope.canSearch;
     };
   });
 

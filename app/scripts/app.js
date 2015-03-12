@@ -34,4 +34,10 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function ($rootScope, $location, User) {
+    $rootScope.$on('$routeChangeStart', function () {
+      if (!User.hasSession()) {
+        $location.path('/');
+      }
+    });
   });
