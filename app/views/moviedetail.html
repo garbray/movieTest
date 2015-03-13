@@ -1,8 +1,8 @@
-<div class="col-md-12" ng-controller="MoviedetailCtrl">
-	<div class="col-md-7">
+<div class="movie-detail content" ng-controller="MoviedetailCtrl">
+	<div class="">
 		<h2>{{movieDetail.title}}</h2>
-		<p>{{movieDetail.description}}</p>
-		<a href="" ng-click="back()">Back</a>
+		<p class="movie-description">{{movieDetail.description}}</p>
+		<a ng-click="back()">Back</a>
 	</div>
 	<div class="col-md-4">
 		<img src="https://image.tmdb.org/t/p/w130/{{movieDetail.poster_path}}" alt="">

@@ -1,0 +1,19 @@
+<div class="content profile">
+  <picture>
+    <img ng-src="{{ user.avatar }}" alt="avatar" class="avatar">
+  </picture>
+  <form class="input-group">
+    <div class="input-row">
+      <label for="name">Name</label>
+      <input id="name" type="text" placeholder="{{ user.name }}" readonly>
+    </div>
+    <div class="input-row">
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="{{ user.username }}" readonly>
+    </div>
+    <div class="input-row">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="{{ user.email }}" readonly>
+    </div>
+  </form>
+</div>

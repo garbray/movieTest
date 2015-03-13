@@ -17,9 +17,6 @@ angular.module('movieTestApp')
       $location.path('/movieDetail/' + id);
     };
 
-    $scope.showSearch = function () {
-      $scope.canSearch = !$scope.canSearch;
-    };
   });
 
 

@@ -12,12 +12,14 @@ angular.module('movieTestApp')
 
     var registerUser = {
       name: 'Bryan Garzon',
-      username: 'garbray',
+      username: 'demo',
       password: 'demo',
       sessionid: 'blablablabla',
+      email: 'demo@demo.co',
       sex: 'male',
       age: '27',
-      text: 'asdfadsfadsf asd fads fasdf asdf asdf asd'
+      text: 'asdfadsfadsf asd fads fasdf asdf asdf asd',
+      avatar: 'images/avatar.jpg'
     },
       localStorageId = 'session';
 
@@ -44,6 +46,17 @@ angular.module('movieTestApp')
 
       saveSession: function (sessionid) {
         window.localStorage.setItem(localStorageId, sessionid);
+      },
+
+      getCurrentUser: function () {
+        var deferred = $q.defer();
+
+        if (this.hasSession) {
+          deferred.resolve(registerUser);
+        } else {
+          deferred.reject('the user is not login');
+        }
+        return deferred.promise;
       }
 
     };

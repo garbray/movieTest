@@ -14,6 +14,7 @@ angular.module('movieTestApp')
     $scope.movieDetail = lodash.find(moviesItems, { 'id': parseInt($routeParams.id, 10) });
     console.log($scope.movieDetail);
     $scope.back = function () {
-        $location.path('/');
+      console.log('here');
+      $location.path('/home');
     };
   });

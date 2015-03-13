@@ -1,17 +1,17 @@
 <nav class="bar bar-tab" ng-show="visible">
-  <a class="tab-item active" href="#">
+  <a class="tab-item active" ng-click="goTo('/home')">
     <span class="icon icon-home"></span>
     <span class="tab-label">Home</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item" ng-click="goTo('/profile')">
     <span class="icon icon-person"></span>
     <span class="tab-label">Profile</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item" ng-click="goTo('/favorites')">
     <span class="icon icon-star-filled"></span>
     <span class="tab-label">Favorites</span>
   </a>
-  <a class="tab-item" href="#">
+  <a class="tab-item" ng-click="goTo('/settings')">
     <span class="icon icon-gear"></span>
     <span class="tab-label">Settings</span>
   </a>

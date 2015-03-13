@@ -7,7 +7,7 @@
  * # tabBar
  */
 angular.module('movieTestApp')
-  .directive('tabBar', function (User) {
+  .directive('tabBar', function ($location, User) {
     return {
       scope: {},
       replace: true,
@@ -15,6 +15,10 @@ angular.module('movieTestApp')
       templateUrl: 'views/tab-bar.html',
       link: function postLink(scope /*, element, attrs*/) {
         scope.visible = User.hasSession();
+
+        scope.goTo = function (path) {
+          $location.path(path);
+        }
       }
     };
   });

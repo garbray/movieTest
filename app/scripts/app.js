@@ -31,6 +31,18 @@ angular
         templateUrl: 'views/moviedetail.html',
         controller: 'MoviedetailCtrl'
       })
+      .when('/settings/', {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl'
+      })
+      .when('/profile/', {
+        templateUrl: 'views/profile.html',
+        controller: 'ProfileCtrl'
+      })
+      .when('/favorites', {
+        templateUrl: 'views/favorites.html',
+        controller: 'FavoritesCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
